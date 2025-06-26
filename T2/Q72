@@ -1,0 +1,28 @@
+def converter_temperatura(valor, origem, destino):
+    origem = origem.upper()
+    destino = destino.upper()
+
+    if origem == destino:
+        return valor
+
+    
+    if origem == 'F':
+        valor = (valor - 32) / 1.8
+    elif origem == 'K':
+        valor = valor - 273.15
+    elif origem != 'C':
+        return "Unidade de origem inválida."
+
+    
+    if destino == 'F':
+        return valor * 1.8 + 32
+    elif destino == 'K':
+        return valor + 273.15
+    elif destino == 'C':
+        return valor
+    else:
+        return "Unidade de destino inválida."
+
+print(converter_temperatura(0, 'C', 'F'))  # 32.0
+print(converter_temperatura(32, 'F', 'C'))  # 0.0
+print(converter_temperatura(300, 'K', 'F'))  # 80.33...

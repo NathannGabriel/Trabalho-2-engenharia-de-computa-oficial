@@ -1,0 +1,15 @@
+import string
+
+def contar_palavras(lista_de_frases):
+    contagem = {}
+    for frase in lista_de_frases:
+        
+        frase = frase.translate(str.maketrans('', '', string.punctuation)).lower()
+        palavras = frase.split()
+        for palavra in palavras:
+            contagem[palavra] = contagem.get(palavra, 0) + 1
+    return contagem
+
+
+frases = ["Olá mundo", "Mundo Python!", "Olá, Python."]
+print(contar_palavras(frases))  

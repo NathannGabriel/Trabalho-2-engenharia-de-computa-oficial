@@ -1,0 +1,10 @@
+def extrair_substring(texto, inicio, fim):
+    inicio = max(0, inicio)
+    fim = min(len(texto), fim)
+    return texto[inicio:fim]
+
+texto_completo = "Programação em Python"
+print(extrair_substring(texto_completo, 4, 12))
+
+texto_completo_2 = "ABCDE"
+print(extrair_substring(texto_completo_2, 1, 10))

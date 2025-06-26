@@ -1,0 +1,16 @@
+def validar_email(email):
+    if email.count('@') != 1:
+        return False
+    nome, resto = email.split('@')
+    if len(nome) == 0:
+        return False
+    if '.' not in resto:
+        return False
+    dominio, *extensoes = resto.split('.')
+    if len(dominio) == 0 or any(len(e) < 2 for e in extensoes):
+        return False
+    return True
+
+print(validar_email("teste@dominio.com"))      
+print(validar_email("invalido@.com"))          
+print(validar_email("outroemail@dom.com.br"))  

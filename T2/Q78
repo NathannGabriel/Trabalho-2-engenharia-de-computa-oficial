@@ -1,0 +1,8 @@
+def contar_linhas(nome_arquivo):
+    try:
+        with open(nome_arquivo, 'r', encoding='utf-8') as f:
+            return len(f.readlines())
+    except FileNotFoundError:
+        print(f"Erro: o arquivo '{nome_arquivo}' não foi encontrado.")
+        return 0
+print(contar_linhas("dados.txt"))
