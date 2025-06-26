@@ -1,0 +1,35 @@
+gabarito = ['A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+maior = menor = None
+soma_notas = total_alunos = 0
+
+while True:
+    print("\nNovo aluno")
+    respostas = []
+    for i in range(10):
+        r = input(f"Resposta da questão {i+1}: ").strip().upper()
+        respostas.append(r)
+
+    acertos = 0
+    for i in range(10):
+        if respostas[i] == gabarito[i]:
+            acertos += 1
+
+    print(f"Acertos: {acertos} / Nota: {acertos:.1f}")
+    total_alunos += 1
+    soma_notas += acertos
+
+    if maior is None or acertos > maior:
+        maior = acertos
+    if menor is None or acertos < menor:
+        menor = acertos
+
+    continuar = input("Outro aluno vai utilizar o sistema? (s/n): ").lower()
+    if continuar != 's':
+        break
+
+media = soma_notas / total_alunos
+print("\n=== RESULTADO FINAL ===")
+print(f"Maior acerto: {maior}")
+print(f"Menor acerto: {menor}")
+print(f"Total de alunos: {total_alunos}")
+print(f"Média da turma: {media:.2f}")

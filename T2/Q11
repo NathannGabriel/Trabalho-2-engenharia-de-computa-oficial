@@ -1,0 +1,4 @@
+num_pri = int(input("escreva um numero: "))
+num_segundo = int(input("escreva outro numero: "))
+soma = num_pri + num_segundo
+print(f"A soma dos numeros {num_pri} e {num_segundo} é: {soma}")

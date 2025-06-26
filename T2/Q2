@@ -1,0 +1,9 @@
+while True:
+    name = input(str("coloque seu nome: "))
+    senha = input("coloque sua senha: ")
+    if name != senha:
+        print("parabéns voce foi registrado")
+        break
+    else:
+        print("Sua senha não pode ser o mesmo que o seu nome")
+

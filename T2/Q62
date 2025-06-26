@@ -1,0 +1,4 @@
+texto = input("Digite uma palavra ou frase: ")
+limpo = texto.replace(" ", "").lower()
+eh_palindromo = limpo == limpo[::-1]
+print(eh_palindromo)

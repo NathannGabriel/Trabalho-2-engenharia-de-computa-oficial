@@ -1,0 +1,4 @@
+num_pri = int(input("escreva um numero: "))
+num_segundo = int(input("escreva outro numero: "))
+for i in range(min(num_pri, num_segundo) + 1, max(num_pri, num_segundo)):
+    print(i, end=' ')

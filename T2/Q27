@@ -1,0 +1,14 @@
+turmas = int(input("Quantas turmas? "))
+total_alunos = 0
+
+for i in range(1, turmas + 1):
+    while True:
+        alunos = int(input(f"Quantos alunos na turma {i}? "))
+        if alunos > 40:
+            print("Erro: máximo de 40 alunos por turma.")
+        else:
+            break
+    total_alunos += alunos
+
+media = total_alunos / turmas
+print("Média de alunos por turma:", media)

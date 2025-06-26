@@ -1,0 +1,40 @@
+maior_indice = menor_indice = None
+cidade_maior = cidade_menor = ""
+total_veiculos = 0
+soma_acidentes_pequenas = 0
+cont_pequenas = 0
+
+for i in range(5):
+    print(f"\nCidade {i+1}")
+    codigo = input("Código da cidade: ")
+    veiculos = int(input("Número de veículos: "))
+    acidentes = int(input("Número de acidentes com vítimas: "))
+
+    # Atualizar maior/menor índice de acidentes
+    if maior_indice is None or acidentes > maior_indice:
+        maior_indice = acidentes
+        cidade_maior = codigo
+
+    if menor_indice is None or acidentes < menor_indice:
+        menor_indice = acidentes
+        cidade_menor = codigo
+
+    total_veiculos += veiculos
+
+    # Verificar se tem menos de 2000 veículos
+    if veiculos < 2000:
+        soma_acidentes_pequenas += acidentes
+        cont_pequenas += 1
+
+# Resultados
+media_veiculos = total_veiculos / 5
+if cont_pequenas > 0:
+    media_acidentes_pequenas = soma_acidentes_pequenas / cont_pequenas
+else:
+    media_acidentes_pequenas = 0
+
+print("\n==== RESULTADOS ====")
+print(f"Maior índice de acidentes: {maior_indice} (Cidade: {cidade_maior})")
+print(f"Menor índice de acidentes: {menor_indice} (Cidade: {cidade_menor})")
+print(f"Média de veículos nas 5 cidades: {media_veiculos:.2f}")
+print(f"Média de acidentes em cidades com menos de 2000 veículos: {media_acidentes_pequenas:.2f}")

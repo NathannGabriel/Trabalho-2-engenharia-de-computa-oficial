@@ -1,0 +1,27 @@
+while True:
+    nome = input("coloque seu nome: ")
+    if len(nome) < 3:
+        print("apenas nomes com mais de 3 letras")
+        continue
+    else:
+        print("nome valido")
+    idade = int(input("coloque sua idade: "))
+    if idade > 0 and idade < 150:
+        print("idade valida")
+    else:
+        print("idade invalida")
+        continue
+    sexo = input("coloque seu sexo (M/F)").upper()
+    if sexo == "M" or sexo == "F":
+        print("sexo valido")
+    else:
+        print("sexo invalido")
+        continue
+    estado_civil = input("coloque seu estado civil (S/C/V/D): ").upper()
+    if estado_civil in ("S", "C", "V", "D"):
+        print("estado civil valido")
+    else:
+        print("estado civil invalido")
+        continue
+    print("Cadastro realizado com sucesso!")
+    break

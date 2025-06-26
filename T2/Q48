@@ -1,0 +1,7 @@
+num = input("Digite um número inteiro positivo: ")
+
+if num.isdigit():
+    invertido = num[::-1]
+    print("Número invertido:", invertido)
+else:
+    print("Entrada inválida. Digite apenas números positivos.")

@@ -1,0 +1,20 @@
+valor_original = float(input("Digite o valor da dívida: R$ "))
+
+# Tabela: parcelas -> % de juros
+tabela_juros = {
+    1: 0,
+    3: 10,
+    6: 15,
+    9: 20,
+    12: 25
+}
+
+print("\nValor da Dívida | Valor dos Juros | Parcelas | Valor da Parcela")
+print("-" * 60)
+
+for parcelas, juros in tabela_juros.items():
+    valor_juros = valor_original * (juros / 100)
+    valor_total = valor_original + valor_juros
+    valor_parcela = valor_total / parcelas
+
+    print(f"R$ {valor_total:12.2f} | R$ {valor_juros:14.2f} | {parcelas:^8} | R$ {valor_parcela:14.2f}")

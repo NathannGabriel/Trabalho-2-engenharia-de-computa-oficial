@@ -1,0 +1,17 @@
+matriz = [
+    [12, 8, 3],
+    [4, 19, 7],
+    [0, -5, 11]
+]
+
+maior = menor = matriz[0][0]
+
+for linha in matriz:
+    for valor in linha:
+        if valor > maior:
+            maior = valor
+        if valor < menor:
+            menor = valor
+
+print("Maior valor:", maior)
+print("Menor valor:", menor)

@@ -1,0 +1,44 @@
+mais_alto = mais_baixo = mais_gordo = mais_magro = None
+cod_alto = cod_baixo = cod_gordo = cod_magro = 0
+soma_altura = soma_peso = cont = 0
+
+while True:
+    codigo = int(input("Código do cliente (0 para encerrar): "))
+    if codigo == 0:
+        break
+
+    altura = float(input("Altura (em metros): "))
+    peso = float(input("Peso (em kg): "))
+
+    if cont == 0:
+        mais_alto = mais_baixo = altura
+        mais_gordo = mais_magro = peso
+        cod_alto = cod_baixo = cod_gordo = cod_magro = codigo
+    else:
+        if altura > mais_alto:
+            mais_alto = altura
+            cod_alto = codigo
+        if altura < mais_baixo:
+            mais_baixo = altura
+            cod_baixo = codigo
+        if peso > mais_gordo:
+            mais_gordo = peso
+            cod_gordo = codigo
+        if peso < mais_magro:
+            mais_magro = peso
+            cod_magro = codigo
+
+    soma_altura += altura
+    soma_peso += peso
+    cont += 1
+
+media_altura = soma_altura / cont
+media_peso = soma_peso / cont
+
+print("\nResultado:")
+print(f"Mais alto (código {cod_alto}): {mais_alto} m")
+print(f"Mais baixo (código {cod_baixo}): {mais_baixo} m")
+print(f"Mais gordo (código {cod_gordo}): {mais_gordo} kg")
+print(f"Mais magro (código {cod_magro}): {mais_magro} kg")
+print(f"Média de altura: {media_altura:.2f} m")
+print(f"Média de peso: {media_peso:.2f} kg")

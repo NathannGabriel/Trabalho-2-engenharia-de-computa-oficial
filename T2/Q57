@@ -1,0 +1,11 @@
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+linhas = len(matriz)
+colunas_uniforme = all(len(linha) == len(matriz[0]) for linha in matriz)
+eh_quadrada = colunas_uniforme and linhas == len(matriz[0])
+
+print(eh_quadrada)

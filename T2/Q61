@@ -1,0 +1,3 @@
+texto_com_espacos = "   Olá   mundo   Python   "
+limpo = ' '.join(texto_com_espacos.split())
+print("Texto limpo:", limpo)

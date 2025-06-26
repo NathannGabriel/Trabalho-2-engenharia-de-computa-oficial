@@ -1,0 +1,13 @@
+matriz = [
+    [1, 2, 3],
+    [4, 2, 6],
+    [7, 8, 2]
+]
+
+elemento = int(input("Digite o elemento a contar: "))
+contagem = 0
+
+for linha in matriz:
+    contagem += linha.count(elemento)
+
+print(f"O elemento {elemento} aparece {contagem} vezes.")

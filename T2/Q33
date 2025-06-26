@@ -1,0 +1,22 @@
+soma = 0
+cont = 0
+menor = maior = None
+
+while True:
+    temp = input("Digite uma temperatura (ou 'fim' para encerrar): ")
+    if temp.lower() == 'fim':
+        break
+
+    temp = float(temp)
+    soma += temp
+    cont += 1
+
+    if menor is None or temp < menor:
+        menor = temp
+    if maior is None or temp > maior:
+        maior = temp
+
+media = soma / cont if cont > 0 else 0
+print(f"Menor temperatura: {menor}")
+print(f"Maior temperatura: {maior}")
+print(f"Média das temperaturas: {media:.2f}")

@@ -1,0 +1,30 @@
+cardapio = {
+    100: ("Cachorro Quente", 1.20),
+    101: ("Bauru Simples", 1.30),
+    102: ("Bauru com Ovo", 1.50),
+    103: ("Hambúrguer", 1.20),
+    104: ("Cheeseburguer", 1.30),
+    105: ("Refrigerante", 1.00)
+}
+
+total_geral = 0
+
+while True:
+    print("\nCARDÁPIO:")
+    for codigo, (nome, preco) in cardapio.items():
+        print(f"{codigo} - {nome} - R$ {preco:.2f}")
+
+    cod = int(input("\nDigite o código do item (0 para encerrar): "))
+    if cod == 0:
+        break
+    if cod not in cardapio:
+        print("Código inválido!")
+        continue
+
+    qtd = int(input("Quantidade: "))
+    item, preco = cardapio[cod]
+    total_item = qtd * preco
+    total_geral += total_item
+    print(f"{qtd} x {item} = R$ {total_item:.2f}")
+
+print(f"\nTotal geral do pedido: R$ {total_geral:.2f}")

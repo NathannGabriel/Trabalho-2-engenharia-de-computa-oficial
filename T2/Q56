@@ -1,0 +1,7 @@
+linhas = 4
+colunas = 5
+
+matriz = [[i * j for j in range(colunas)] for i in range(linhas)]
+
+for linha in matriz:
+    print(linha)

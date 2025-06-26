@@ -1,0 +1,11 @@
+salario_inicial = float(input("Digite o salário inicial do funcionário: "))
+ano = 1996
+aumento = 0.015  # 1,5%
+salario = salario_inicial + (salario_inicial * aumento)
+
+while ano <= 2025:
+    aumento *= 2
+    salario += salario * aumento
+    ano += 1
+
+print(f"Salário atual em 2025: R$ {salario:.2f}")

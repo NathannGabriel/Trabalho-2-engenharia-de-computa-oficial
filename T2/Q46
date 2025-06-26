@@ -1,0 +1,31 @@
+while True:
+    nome = input("\nAtleta (pressione Enter para encerrar): ").strip()
+    if nome == "":
+        break
+
+    saltos = []
+    nomes_saltos = ["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"]
+
+    for i in range(5):
+        salto = float(input(f"{nomes_saltos[i]} Salto: "))
+        saltos.append(salto)
+
+    print(f"\nAtleta: {nome}")
+    for i in range(5):
+        print(f"{nomes_saltos[i]} Salto: {saltos[i]:.1f} m")
+
+    melhor = max(saltos)
+    pior = min(saltos)
+
+    # Cópia da lista para calcular média sem alterar a original
+    saltos_para_media = saltos.copy()
+    saltos_para_media.remove(melhor)
+    saltos_para_media.remove(pior)
+
+    media = sum(saltos_para_media) / len(saltos_para_media)
+
+    print(f"\nMelhor salto: {melhor:.1f} m")
+    print(f"Pior salto: {pior:.1f} m")
+    print(f"Média dos demais saltos: {media:.1f} m")
+    print("\nResultado final:")
+    print(f"{nome}: {media:.1f} m")

@@ -1,0 +1,7 @@
+soma = 0
+for i in range(5):
+    num = float(input(f"digite o {i+1} numero: "))
+    soma += num 
+media = soma /5
+print(f"soma: {soma}")
+print(f"media: {media}")

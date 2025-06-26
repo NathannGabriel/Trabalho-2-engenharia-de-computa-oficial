@@ -1,0 +1,22 @@
+while True:
+        pop_a = int(input("População A: "))
+        pop_b = int(input("População B: "))
+        taxa_a = float(input("Taxa de crescimento A (%): ")) / 100
+        taxa_b = float(input("Taxa de crescimento B (%): ")) / 100
+
+        if pop_a <= 0 or pop_b <= 0 or taxa_a <= 0 or taxa_b <= 0:
+            print("Todos os valores devem ser positivos.")
+            continue
+
+        anos = 0
+        while pop_a <= pop_b:
+            pop_a *= (1 + taxa_a)
+            pop_b *= (1 + taxa_b)
+            anos += 1
+
+        print(f"População A ultrapassa B em {anos} anos.")
+        
+        repetir = input("Deseja repetir? (s/n): ").lower()
+        if repetir != 's':
+            break
+        print("Entrada inválida. Tente novamente.")

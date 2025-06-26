@@ -1,0 +1,15 @@
+n = int(input("Quantas pessoas na turma? "))
+soma_idades = 0
+
+for i in range(n):
+    idade = int(input(f"Idade da pessoa {i+1}: "))
+    soma_idades += idade
+
+media = soma_idades / n
+
+if media <= 25:
+    print("Turma jovem.")
+elif media <= 60:
+    print("Turma adulta.")
+else:
+    print("Turma idosa.")

@@ -1,0 +1,25 @@
+mais_alto = 0
+altura_mais_alto = 0
+
+mais_baixo = 0
+altura_mais_baixo = 0
+
+for r in range(10):
+    numero = int(input(f"\nDigite o número do aluno {r+1}: "))
+    altura = float(input(f"Digite a altura do aluno {r+1} (em cm): "))
+
+    if r == 0:
+        # Inicializa na primeira iteração
+        mais_alto = mais_baixo = numero
+        altura_mais_alto = altura_mais_baixo = altura
+    else:
+        if altura > altura_mais_alto:
+            mais_alto = numero
+            altura_mais_alto = altura
+        if altura < altura_mais_baixo:
+            mais_baixo = numero
+            altura_mais_baixo = altura
+
+print("\n=== RESULTADO FINAL ===")
+print(f"Aluno mais alto: Nº {mais_alto} com {altura_mais_alto} cm")
+print(f"Aluno mais baixo: Nº {mais_baixo} com {altura_mais_baixo} cm")
